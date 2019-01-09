@@ -1,0 +1,396 @@
+/* Basic CSS Reset */
+html,
+body,
+div,
+article,
+section,
+header,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+li,
+ol,
+p,
+img {
+  margin: 0;
+  padding: 0;
+}
+ol,
+ul {
+  list-style: none;
+}
+li {
+  margin: 1em 0;
+}
+/* link */
+section > article > div a {
+  text-decoration: none;
+  color: #2c3e50;
+  font-size: 1.2em;
+  background: transparent;
+  padding: 0.4em 0.8em;
+  margin: 1em 0;
+  transition: all 0.6s;
+  border: 2px solid #2c2c54;
+  border-radius: 1px;
+}
+section > article > div a:hover,
+section > article > div a:active {
+  box-shadow: inset 0 0 0 2em #2c2c54;
+  color: #fff;
+}
+* {
+  box-sizing: border-box;
+}
+/* Global Styles */
+body {
+  line-height: 1.55;
+  font-size: 100%;
+  font-weight: 400;
+  font-family: Microsoft JhengHei;
+  background: #2c2c54;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Microsoft JhengHei;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2em;
+  padding-bottom: 0.35em;
+}
+
+footer {
+  color: #fff;
+  text-align: center;
+  margin: 1em;
+}
+
+/* content */
+section {
+  margin: 1.2em 0.8em;
+  background: rgba(236, 240, 241, 1);
+  border-radius: 5px;
+}
+section article {
+  border-radius: 5px;
+  padding: 1em 0.5em;
+}
+section article time {
+  margin-bottom: 2em;
+  color: #808e9b;
+}
+section article p {
+  letter-spacing: 1.3px;
+  line-height: 1.8em;
+}
+section article .download {
+  margin-top: 1em;
+  text-align: center;
+}
+/* select style */
+.select {
+  padding: 2em 0 1em;
+  width: 100%;
+  text-align: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.select .logo {
+  width: 75%;
+  display: flex;
+  margin-left: 1em;
+}
+
+.select .logo img {
+  width: 60px;
+  height: 40px;
+  border-radius: 0.3em;  
+}
+
+.flip{
+  animation: icon 2s linear forwards;
+}
+.delay{
+  animation-delay: 1s;
+}
+
+/* 一開始icon動畫 */
+@-webkit-keyframes icon {
+  0% {
+    -webkit-transform:rotateY(0deg);
+    -moz-transform:rotateY(0deg);
+    transform:rotateY(0deg);
+  }
+  25%{
+    -moz-transform:rotateY(720deg);
+    -webkit-transform:rotateY(720deg);
+    transform:rotateY(720deg);
+  }
+  50%{
+    -moz-transform:rotateY(900deg);
+    -webkit-transform:rotateY(900deg);
+    transform:rotateY(900deg);
+  }
+  100% {
+    -moz-transform:rotateY(1080deg);
+    -webkit-transform:rotateY(1080deg);
+    transform:rotateY(1080deg);
+  }
+}
+@-moz-keyframes icon {
+  0% {
+    -webkit-transform:rotateY(0deg);
+    -moz-transform:rotateY(0deg);
+    transform:rotateY(0deg);
+  }
+  25%{
+    -moz-transform:rotateY(720deg);
+    -webkit-transform:rotateY(720deg);
+    transform:rotateY(720deg);
+  }
+  50%{
+    -moz-transform:rotateY(900deg);
+    -webkit-transform:rotateY(900deg);
+    transform:rotateY(900deg);
+  }
+  100% {
+    -moz-transform:rotateY(1080deg);
+    -webkit-transform:rotateY(1080deg);
+    transform:rotateY(1080deg);
+  }
+}
+@keyframes icon {
+  0% {
+    -webkit-transform:rotateY(0deg);
+    -moz-transform:rotateY(0deg);
+    transform:rotateY(0deg);
+  }
+  25%{
+    -moz-transform:rotateY(720deg);
+    -webkit-transform:rotateY(720deg);
+    transform:rotateY(720deg);
+  }
+  50%{
+    -moz-transform:rotateY(900deg);
+    -webkit-transform:rotateY(900deg);
+    transform:rotateY(900deg);
+  }
+  100% {
+    -moz-transform:rotateY(1080deg);
+    -webkit-transform:rotateY(1080deg);
+    transform:rotateY(1080deg);
+  }
+}
+
+.select select {
+  width: 20%;
+  font-size: 1.5em;
+  padding: 0.1em 0.3em;
+  color: #808e9b;
+}
+
+select,
+nav {
+  margin-right: 1em;
+  position: relative;
+}
+
+/* nav 公差*/
+nav {
+  cursor: pointer;
+  width: 5%;
+  height: 50px;
+  z-index: 9999;
+}
+.nav-toggle {
+  margin-top: 1.3em;
+}
+.nav-toggle span,
+.nav-toggle span::before,
+.nav-toggle span::after {
+  border-radius: 1px;
+  height: 5px;
+  width: 35px;
+  background: #f6f6f6;
+  position: absolute;
+  display: block;
+  content: '';
+
+  transition: all 0.5s ease-in-out;
+}
+.nav-toggle span::before {
+  top: -10px;
+}
+.nav-toggle span::after {
+  top: 10px;
+}
+.nav-toggle.active span {
+  background: transparent;
+}
+.nav-toggle.active span::before,
+.nav-toggle.active span::after {
+  top: 0;
+}
+.nav-toggle.active span::before {
+  transform: rotate(-315deg);
+  box-shadow: 1px 1px 10px 1px#8b9dc3;
+}
+.nav-toggle.active span::after {
+  transform: rotate(315deg);
+  box-shadow: 1px 1px 10px 1px#8b9dc3;
+}
+
+/* hide */
+.hide {
+  display: none;
+}
+
+/* 讚 */
+.thumb {
+  width: 5em;
+  cursor: pointer;
+}
+.site-logo {
+  margin-left: 0.8em;
+  width: 19px;
+}
+.site-logo.animate {
+  animation: bounce 0.3s linear;
+}
+@keyframes bounce {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  33% {
+    transform: scale(0.5);
+  }
+  66% {
+    transform: scale(2);
+  }
+}
+/* back to top */
+.bkTop {
+  position: fixed;
+  bottom: 1.5em;
+  right: 1.5em;
+  text-decoration: none;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.2);
+  font-size: 0.8em;
+  padding: 0.9em;
+  border-radius: 1px;
+  display: none;
+}
+.bkTop:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+/* alert box */
+#bg {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+}
+
+#alertBox {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 85%;
+  height: auto;
+  text-align: center;
+  background: #f6f6f6;
+  border-radius: 3px;
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.3);
+  overflow-y: scroll;
+}
+
+/* table style */
+table {
+  border-collapse: collapse;
+  margin: 1em auto;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+  padding: 0.2em 0.5em;
+}
+/* 置頂 */
+.top {
+  border: 2px solid #fff;
+  padding: 0.1em;
+  border-radius: 2px;
+  box-shadow: 0 0 5px #e84118;
+}
+/* table 反白 */
+.target td,
+td .target {
+  background: #dfe6e9;
+  cursor: default;
+}
+._5lm5 {
+  display: none;
+}
+
+/* RWD */
+@media only screen and (max-width: 733px) {
+  .select .logo {
+    width: 48%;
+  }
+  .select select {
+    width: 42%;
+  }
+  nav {
+    width: 10%;
+  }
+}
+@media only screen and (max-width: 374px) {
+  .select {
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .select .logo {
+    width: auto;
+    margin: 0 0.3em;
+  }
+  .select select {
+    width: auto;
+    margin: 0 0.3em;
+  }
+  nav {
+    width: 50px;
+    margin: 0 0.3em;
+  }
+}
+/* 行動瀏覽器 (iOS Safari, 等等） */
+input[type='text'],
+input[type='number'],
+select,
+textarea {
+  font-size: 16px;
+}
